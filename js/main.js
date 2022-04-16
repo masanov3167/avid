@@ -15,6 +15,8 @@ header.addEventListener("click", evt =>{
     if(evt.target.matches(".toggle")){
         navbar.classList.add('show');
         main.style.opacity = "0";
+        signIn.classList.add("display-none");
+        signUp.classList.add("display-none");
     }
     if(evt.target.matches(".header-nav-item")){
         navbar.classList.remove("show");
