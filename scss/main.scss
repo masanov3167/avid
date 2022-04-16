@@ -229,21 +229,21 @@ $header-font-size: 15px;
             width: 70%;
             height: 100vh;
             padding: 10px 10px 20px;
-            background: white;
+            background-color: white !important;
+            background: url(../img/IMAGE.png) no-repeat;
+            background-size: contain;
+            background-position: calc(70%);
             border-radius: 10px 0 0 10px;
             box-shadow: 0 0 5px rgba(45, 45, 45, 0.2);
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-start;
             flex-direction: column;
             transition-duration: 1.5s;
-            transition-property: transform;
-            transform: translateZ(0);
             transform: translate(150%);
-            z-index: 5;
+            z-index: 2;
 
             &-item{
-                margin: 20px 0;
+                margin: 25px 0 10px;
                 width: 100%;
                 text-align: center;
             }
@@ -300,10 +300,11 @@ $header-font-size: 15px;
             display: flex;
             justify-content: flex-start;
             flex-direction: column;
-            transition-duration: 1.5s;
+            transition-duration: 1s;
             transition-property: transform;
             transform: translateZ(0);
             transform: translate(150%);
+            z-index: 5;
 
             &-item{
                 margin: 25px 0 10px;
@@ -411,8 +412,60 @@ $header-font-size: 15px;
     }
 }
     
+// main style here 
+@keyframes downAnim {
+    0%{
+        transform: translate(0)
+    }
+    50%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translate(0);
+    }
 
+}
+.hero{
+    width: 500px;
+    margin: 150px auto;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    &-title{
+        font-size: 35px;
+        color: #192774;
+        text-align: center;
+    }
+    &-down{
+       width: 30px;
+       height: 30px;
+       animation: linear downAnim 1.4s infinite;
+    }
+}
 
+@media only screen and (min-width: 300px) and (max-width: 500px){
+    .hero{
+        width: 350px;
+        margin: 70px auto;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        &-title{
+            font-size: 30px;
+            color: #192774;
+            text-align: center;
+        }
+        &-down{
+           width: 30px;
+           height: 30px;
+           animation: linear downAnim 1.4s infinite;
+        }
+    }
+}
 
 
 
