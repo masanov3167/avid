@@ -224,11 +224,13 @@ $header-font-size: 15px;
     .header{
         &-nav{
             position: absolute;
-            top: 140px;
-            width: 90%;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100vh;
             padding: 10px 10px 20px;
             background: white;
-            border-radius: 10px;
+            border-radius: 10px 0 0 10px;
             box-shadow: 0 0 5px rgba(45, 45, 45, 0.2);
             display: flex;
             justify-content: center;
@@ -238,15 +240,16 @@ $header-font-size: 15px;
             transition-property: transform;
             transform: translateZ(0);
             transform: translate(150%);
+            z-index: 5;
 
             &-item{
-                margin: 10px 0;
+                margin: 20px 0;
                 width: 100%;
                 text-align: center;
             }
             &-item:hover::after{
                margin-top: 3px;
-               height: 3px;
+               height: 2px;
             }
             &-item::after{
                 display: block;
@@ -254,7 +257,7 @@ $header-font-size: 15px;
                 width: inherit;
                 height: 3px;
                 background: #192774;
-                margin-top: 3px;
+                margin-top: 2px;
                 border-radius: 5px;
             }
 
@@ -272,17 +275,24 @@ $header-font-size: 15px;
     .toggle, .close{
         display: block;
     }
+    .close{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
 }
 
 @media only screen and (min-width: 300px) and (max-width: 549px) {
     .header{
         &-nav{
             position: absolute;
-            top: 140px;
-            width: 90%;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100vh;
             padding: 10px 10px 20px;
             background: white;
-            border-radius: 10px;
+            border-radius: 10px 0 0 10px;
             box-shadow: 0 0 5px rgba(45, 45, 45, 0.2);
             display: flex;
             justify-content: center;
@@ -322,6 +332,11 @@ $header-font-size: 15px;
     }
     .toggle, .close{
         display: block;
+    }
+    .close{
+        position: absolute;
+        top: 10px;
+        right: 20px;
     }
 }
 

@@ -13,12 +13,16 @@ const formInputEmailIn = document.querySelector(".form-input-in");
 
 header.addEventListener("click", evt =>{
     if(evt.target.matches(".toggle")){
-        document.querySelector('.toggle').classList.toggle('close');
-        navbar.classList.toggle('show');
+        navbar.classList.add('show');
+        main.style.opacity = "0";
     }
     if(evt.target.matches(".header-nav-item")){
         navbar.classList.remove("show");
-        document.querySelector('.toggle').classList.toggle('close');
+        main.style.opacity = "1";
+    }
+    if(evt.target.matches(".close")){
+        navbar.classList.remove("show");
+        main.style.opacity = "1";
     }
     if(evt.target.matches(".header-login-sign-up") || evt.target.matches(".sign")){
         signIn.classList.add("display-none");
