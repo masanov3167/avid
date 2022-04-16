@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avid.uz - dasturlashdan bepul kurslar to'plami</title>
+    <link rel="stylesheet" href="./css/main.min.css">
+     <link rel="shortcut icon" href="./img/code-solid.svg" type="image/x-icon">
+</head>
+<body>
+    
+    <header class="header">
+        <a href="#"><img class="header-logo" src="https://onlayn-darslar.netlify.app/img/logo.png" alt="logo"></a>
+
+        <ol class="header-nav">
+            <li class="header-nav-item main-menu">Bosh menyu</li>
+            <li class="header-nav-item blog">Blog</li>
+            <li class="header-nav-item about">Biz haqimizda</li>
+            <li class="header-nav-item support">Aloqa</li>
+            <li class="header-nav-item header-nav-login enter">Kirish</li>
+            <li class="header-nav-item header-nav-login sign">Ro'yhatdan o'tish</li>
+        </ol>
+        
+       <ol class="header-login">
+        <li class="header-login-sign-up">Ro'yhatdan o'tish</li>
+        <li class="header-login-sign-in">Kirish</li>
+       </ol>
+
+       <div class="toggle"></div>
+
+    </header>
+
+    <main class="main">
+        <div class="sign-up-modal display-none">
+            <h3 class="card-title">AVID.UZ</h3>
+    
+            <form class="form" action="index.php" autocomplete="off" method="POST">
+                <input class="form-input" type="email" maxlength="20" name="userName" aria-label="userneym kiriting..." placeholder="Username" required>
+                <input class="form-pass" type="password" name="userPassword" aria-label="Maxfiy parol kiriting bu sizning profilingizga kirish uchun parol sifatida saqlanadi." placeholder="Password" minlength="7" maxlength="23" required>
+                <div id="mode">
+                    <strong id="eye" class="type-text"></strong>
+                    <strong id="eyeSlash"></strong>
+                </div>
+                <button class="form-btn" type="submit">Ro'yhatdan o'tish</button>
+            </form>
+
+            <button class="close-sign-up">Menyuni yopish</button>
+        </div>
+
+        <div class="sign-in-modal display-none">
+            <h3 class="card-title">AVID.UZ</h3>
+    
+            <form class="form-in" action="index.php" autocomplete="off" method="POST">
+                <input class="form-input-in" type="text" maxlength="20" name="userName" aria-label="userneym kiriting..." placeholder="Username" required>
+                <input class="form-pass-in" type="password" name="userPassword" aria-label="Maxfiy parol kiriting bu sizning profilingizga kirish uchun parol sifatida saqlanadi." placeholder="Password" minlength="7" maxlength="23" required>
+                <div id="mode">
+                    <strong id="textIn" class="type-text-in"></strong>
+                    <strong id="passwordIn"></strong>
+                </div>
+                <button class="form-button" type="submit">Kirish</button>
+                <a class="forgot" href="#">Parolni unutdingizmi?</a>
+            </form>
+
+            <button class="close-sign-in">Menyuni yopish</button>
+        </div>
+    </main>
+
+    
+
+<script src="./js/arr.js"></script>
+<script src="./js/utils.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
