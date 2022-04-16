@@ -291,11 +291,14 @@ $header-font-size: 15px;
             width: 70%;
             height: 100vh;
             padding: 10px 10px 20px;
-            background: white;
+            background-color: white !important;
+            background: url(../img/IMAGE.png) no-repeat;
+            // background-size: cover;
+            background-position: bottom;
             border-radius: 10px 0 0 10px;
             box-shadow: 0 0 5px rgba(45, 45, 45, 0.2);
             display: flex;
-            align-items: center;
+            justify-content: flex-start;
             flex-direction: column;
             transition-duration: 1.5s;
             transition-property: transform;
@@ -303,7 +306,7 @@ $header-font-size: 15px;
             transform: translate(150%);
 
             &-item{
-                margin: 10px 0;
+                margin: 25px 0 10px;
                 width: 100%;
                 text-align: center;
             }
