@@ -67,11 +67,106 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
+    }
+}
 
-        // &-item{
-        //     width: 250px;
-        //     margin: 20px auto;
-        // }
+// static item style here 
+.static{
+    list-style: none;
+    width: 100%;
+    height: auto;
+    margin: 50px 0;
+    padding: 4% 5%;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(45, 45, 45, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    &-item{
+        width: 200px;
+        height: 180px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(45, 45, 45, 0.3);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+
+        transition-duration: .3s;
+        transition-property: transform;
+        transform: translateZ(0);
+        margin-bottom: 15px;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &-img{
+            width: 70px;
+            height: 70px;
+            display: block;
+        }
+        &-title{
+            font-size: 15px;
+        }
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 450px){
+    .list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+       
+    }
+}
+
+
+// footer style here 
+footer{
+    width: 100%;
+    height: 150px;
+    padding: 10px 0px;
+    background: #131b43;
+    color: #FBFCFE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer{
+    &-info{
+        font-size: 19px;
+        font-weight: 400;
+        text-transform: none !important;
+        margin-top: 30px;
+        opacity: 0.7;
+    
+        a {
+            text-decoration: none;
+            color: white;
+            transition: all .2s;
+        
+            &:hover{
+                opacity: 0.6;
+                transition: all .2s;
+            }
+        }
+    }
+
+    &-img{
+        width: 40px;
+        height: 40px;
+        margin: 0 10px;
+        transition: all .2s;
+    
+        &:hover{
+            opacity: 0.5;
+            transition: all .2s;
+        }
     }
 }

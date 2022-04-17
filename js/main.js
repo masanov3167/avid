@@ -115,12 +115,12 @@ async function getCourses(){
     console.log(h);
     renderCourses(h, list)
 }
-getCourses();
+// getCourses();
 
 function renderCourses(arr, node){
     node.innerHTML = null;
     document.querySelector(".hero").style.opacity = "0";
-    
+
     const loader = document.createElement("div");
     loader.classList.add("loader");
     loader.innerHTML = `<span>{</span><span>}</span>`;
