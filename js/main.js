@@ -120,10 +120,14 @@ getCourses();
 function renderCourses(arr, node){
     node.innerHTML = null;
     document.querySelector(".hero").style.opacity = "0";
+    document.querySelector(".static").style.opacity = "0";
+    document.querySelector("footer").style.opacity = "0";
 
     const loader = document.createElement("div");
-    loader.classList.add("loader");
-    loader.innerHTML = `<span>{</span><span>}</span>`;
+    loader.classList.add("loader-wrapper");
+    loader.innerHTML = `<div class="loader">
+    <span>{</span><span>}</span>
+</div>`;
     list.appendChild(loader);
    
     setTimeout(() =>{
@@ -141,5 +145,7 @@ function renderCourses(arr, node){
         });
         node.appendChild(fragment);
         document.querySelector(".hero").style.opacity = "1";
-    }, 1400);
+        document.querySelector(".static").style.opacity = "1";
+        document.querySelector("footer").style.opacity = "1";
+    }, 1500);
 }

@@ -2,21 +2,24 @@ $background-color: #4684ee;
 $loader-color: #fff;
 $loader-size: 25vh;
 
-
+.loader-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 .loader {
   color: blue;
   
   font-family: Consolas, Menlo, Monaco, monospace;
   font-weight: bold;
   font-size: $loader-size;
-  
-  opacity: 0.8;
   position: fixed;
-  top: 33%;
-  left: 44.5%;
-  text-align: center;
-  
-  
+  top: 18 0px;
+ 
+  opacity: 0.8;
   span {
       text-align: center;
     display: inline-block;
@@ -35,28 +38,28 @@ $loader-size: 25vh;
   }
 }
 
-@media only screen and (min-width: 700px) and (max-width: 799px){
-    .loader{
-        left: 43.4%;
-    }
-}
-@media only screen and (min-width: 600px) and (max-width: 699px){
-    .loader{
-        left: 41.5%;
-    }
-}
-@media only screen and (min-width: 500px) and (max-width: 599px){
-    .loader{
-        left: 40%;
-    }
-}
-@media only screen and (min-width: 400px) and (max-width: 499px){
-    .loader{
-        left: 38.3%;
-    }
-}
-@media only screen and (min-width: 300px) and (max-width: 399px){
-    .loader{
-        left: 36.7%;
-    }
-}
+// @media only screen and (min-width: 700px) and (max-width: 799px){
+//     .loader{
+//         left: 43.4%;
+//     }
+// }
+// @media only screen and (min-width: 600px) and (max-width: 699px){
+//     .loader{
+//         left: 41.5%;
+//     }
+// }
+// @media only screen and (min-width: 500px) and (max-width: 599px){
+//     .loader{
+//         left: 40%;
+//     }
+// }
+// @media only screen and (min-width: 400px) and (max-width: 499px){
+//     .loader{
+//         left: 38.3%;
+//     }
+// }
+// @media only screen and (min-width: 300px) and (max-width: 399px){
+//     .loader{
+//         left: 36.7%;
+//     }
+// }
