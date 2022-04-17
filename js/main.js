@@ -10,6 +10,9 @@ const formInputPassIn = document.querySelector(".form-pass-in");
 const formInputEmail = document.querySelector(".form-input");
 const formInputEmailIn = document.querySelector(".form-input-in");
 const signList = document.querySelector(".sign-list");
+const fragment = document.createDocumentFragment();
+const coursesTemplate = document.querySelector(".courses-template").content;
+const list = document.querySelector(".list");
 
 
 header.addEventListener("click", evt =>{
@@ -41,6 +44,9 @@ header.addEventListener("click", evt =>{
         signList.classList.remove("display-none");
         formInputPassIn.value = null;
         formInputEmailIn.value = null;
+    }
+    if(evt.target.matches(".main-menu")){
+        getCourses();
     }
 });
 
@@ -99,4 +105,30 @@ Password: ${userPass}`);
     formInputPassIn.value = null;
     signList.classList.add("display-none");
     signIn.classList.remove("sign-show");
-})
+});
+
+async function getCourses(){
+
+    const res = await fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=16bebfc50341cc543211465e5af7fc48");
+    const data = await res.json();
+    let h = data.results;
+    console.log(h);
+    renderCourses(h, list)
+}
+getCourses();
+
+function renderCourses(arr, node){
+    node.innerHTML = "";
+
+    arr.forEach(a =>{
+        const cloned = coursesTemplate.cloneNode(true);
+
+        cloned.querySelector(".list-item-img").src = `https://image.tmdb.org/t/p/w500${a?.poster_path}`;
+        cloned.querySelector(".body-title").textContent = a?.title;
+        cloned.querySelector(".body-title").id = a?.id;
+        cloned.querySelector(".body-info").textContent = a?.overview.substr(0,80);
+
+        fragment.appendChild(cloned);
+    });
+    node.appendChild(fragment);
+}
