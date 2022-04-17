@@ -118,17 +118,28 @@ async function getCourses(){
 getCourses();
 
 function renderCourses(arr, node){
-    node.innerHTML = "";
+    node.innerHTML = null;
+    document.querySelector(".hero").style.opacity = "0";
+    
+    const loader = document.createElement("div");
+    loader.classList.add("loader");
+    loader.innerHTML = `<span>{</span><span>}</span>`;
+    list.appendChild(loader);
+   
+    setTimeout(() =>{
+        node.innerHTML = "";
 
-    arr.forEach(a =>{
-        const cloned = coursesTemplate.cloneNode(true);
-
-        cloned.querySelector(".list-item-img").src = `https://image.tmdb.org/t/p/w500${a?.poster_path}`;
-        cloned.querySelector(".body-title").textContent = a?.title;
-        cloned.querySelector(".body-title").id = a?.id;
-        cloned.querySelector(".body-info").textContent = a?.overview.substr(0,80);
-
-        fragment.appendChild(cloned);
-    });
-    node.appendChild(fragment);
+        arr.forEach(a =>{
+            const cloned = coursesTemplate.cloneNode(true);
+    
+            cloned.querySelector(".list-item-img").src = `https://image.tmdb.org/t/p/w500${a?.poster_path}`;
+            cloned.querySelector(".body-title").textContent = a?.title;
+            cloned.querySelector(".body-title").id = a?.id;
+            cloned.querySelector(".body-info").textContent = a?.overview.substr(0,80);
+    
+            fragment.appendChild(cloned);
+        });
+        node.appendChild(fragment);
+        document.querySelector(".hero").style.opacity = "1";
+    }, 1400);
 }
