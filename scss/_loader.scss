@@ -1,6 +1,6 @@
 $background-color: #4684ee;
 $loader-color: #fff;
-$loader-size: 30vh;
+$loader-size: 25vh;
 
 
 .loader {
@@ -10,12 +10,16 @@ $loader-size: 30vh;
   font-weight: bold;
   font-size: $loader-size;
   
+//   width: 200px;
   opacity: 0.8;
   position: fixed;
-  top: calc(70% - 1.25em);
-  left: calc(62.5% - 1.25em);
-
+  top: 33%;
+  left: 44.5%;
+  text-align: center;
+  
+  
   span {
+      text-align: center;
     display: inline-block;
     animation: pulse 0.4s alternate infinite ease-in-out;
 
