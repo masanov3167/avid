@@ -9,22 +9,23 @@ const formInputPass = document.querySelector(".form-pass");
 const formInputPassIn = document.querySelector(".form-pass-in");
 const formInputEmail = document.querySelector(".form-input");
 const formInputEmailIn = document.querySelector(".form-input-in");
+const signList = document.querySelector(".sign-list");
 
 
 header.addEventListener("click", evt =>{
     if(evt.target.matches(".toggle")){
         navbar.classList.add('show');
-        main.style.opacity = "0";
         signIn.classList.add("display-none");
         signUp.classList.add("display-none");
+        document.querySelector(".hero-down").style.opacity = "0"
     }
     if(evt.target.matches(".header-nav-item")){
         navbar.classList.remove("show");
-        main.style.opacity = "1";
+        document.querySelector(".hero-down").style.opacity = "1";
     }
     if(evt.target.matches(".close")){
         navbar.classList.remove("show");
-        main.style.opacity = "1";
+        document.querySelector(".hero-down").style.opacity = "1"
     }
     if(evt.target.matches(".header-login-sign-up") || evt.target.matches(".sign")){
         signIn.classList.add("display-none");
@@ -40,7 +41,7 @@ header.addEventListener("click", evt =>{
     }
 });
 
-main.addEventListener("click", evt =>{
+signList.addEventListener("click", evt =>{
     if(evt.target.matches(".close-sign-up")){
         signUp.classList.add("display-none");
     }

@@ -301,8 +301,6 @@ $header-font-size: 15px;
             justify-content: flex-start;
             flex-direction: column;
             transition-duration: 1s;
-            transition-property: transform;
-            transform: translateZ(0);
             transform: translate(150%);
             z-index: 5;
 
@@ -348,14 +346,16 @@ $header-font-size: 15px;
 .main{
     margin-top: 140px;
 }
-
+.sign-list{
+    list-style: none;
+}
 .sign-up-modal, .sign-in-modal{
     width: 350px;
     height: auto;
     background: url(https://directlinedev.com/media/services/service/background/background_11.wide.jpeg) no-repeat;
     background-size: cover;
     border-radius: 15px;
-    margin: 0 auto;
+    margin: 130px auto;
     padding: 20px 30px;
 }
 .card-title{

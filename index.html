@@ -32,8 +32,25 @@
 
     </header>
 
-    <main class="main">
-        <div class="sign-up-modal display-none">
+    <ol class="sign-list">
+        <li class="sign-in-modal display-none">
+            <h3 class="card-title">AVID.UZ</h3>
+    
+            <form class="form-in" action="index.php" autocomplete="off" method="POST">
+                <input class="form-input-in" type="text" maxlength="20" name="userName" aria-label="userneym kiriting..." placeholder="Username" required>
+                <input class="form-pass-in" type="password" name="userPassword" aria-label="Maxfiy parol kiriting bu sizning profilingizga kirish uchun parol sifatida saqlanadi." placeholder="Password" minlength="7" maxlength="23" required>
+                <div id="mode">
+                    <strong id="textIn" class="type-text-in"></strong>
+                    <strong id="passwordIn"></strong>
+                </div>
+                <button class="form-button" type="submit">Kirish</button>
+                <a class="forgot" href="#">Parolni unutdingizmi?</a>
+            </form>
+    
+            <button class="close-sign-in">Menyuni yopish</button>
+        </li>
+
+        <li class="sign-up-modal display-none">
             <h3 class="card-title">AVID.UZ</h3>
     
             <form class="form" action="index.php" autocomplete="off" method="POST">
@@ -47,26 +64,10 @@
             </form>
 
             <button class="close-sign-up">Menyuni yopish</button>
-        </div>
+        </li>
+    </ol>
 
-        <div class="sign-in-modal display-none">
-            <h3 class="card-title">AVID.UZ</h3>
-    
-            <form class="form-in" action="index.php" autocomplete="off" method="POST">
-                <input class="form-input-in" type="text" maxlength="20" name="userName" aria-label="userneym kiriting..." placeholder="Username" required>
-                <input class="form-pass-in" type="password" name="userPassword" aria-label="Maxfiy parol kiriting bu sizning profilingizga kirish uchun parol sifatida saqlanadi." placeholder="Password" minlength="7" maxlength="23" required>
-                <div id="mode">
-                    <strong id="textIn" class="type-text-in"></strong>
-                    <strong id="passwordIn"></strong>
-                </div>
-                <button class="form-button" type="submit">Kirish</button>
-                <a class="forgot" href="#">Parolni unutdingizmi?</a>
-            </form>
-
-            <button class="close-sign-in">Menyuni yopish</button>
-        </div>
-
-
+    <main class="main">
         <div class="hero">
             <h3 class="hero-title">Dasturlashga oid onlayn darslar platformasi</h3>
 
@@ -76,7 +77,24 @@
     </main>
 
     
+<template class="sign-in-template">
+    <div class="sign-in-modal">
+        <h3 class="card-title">AVID.UZ</h3>
 
+        <form class="form-in" action="index.php" autocomplete="off" method="POST">
+            <input class="form-input-in" type="text" maxlength="20" name="userName" aria-label="userneym kiriting..." placeholder="Username" required>
+            <input class="form-pass-in" type="password" name="userPassword" aria-label="Maxfiy parol kiriting bu sizning profilingizga kirish uchun parol sifatida saqlanadi." placeholder="Password" minlength="7" maxlength="23" required>
+            <div id="mode">
+                <strong id="textIn" class="type-text-in"></strong>
+                <strong id="passwordIn"></strong>
+            </div>
+            <button class="form-button" type="submit">Kirish</button>
+            <a class="forgot" href="#">Parolni unutdingizmi?</a>
+        </form>
+
+        <button class="close-sign-in">Menyuni yopish</button>
+    </div>
+</template>
 <script src="./js/arr.js"></script>
 <script src="./js/utils.js"></script>
 <script src="./js/main.js"></script>
