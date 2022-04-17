@@ -32,8 +32,8 @@
 
     </header>
 
-    <ol class="sign-list">
-        <li class="sign-in-modal display-none">
+    <ol class="sign-list display-none">
+        <li class="sign-in-modal">
             <h3 class="card-title">AVID.UZ</h3>
     
             <form class="form-in" action="index.php" autocomplete="off" method="POST">
@@ -50,7 +50,7 @@
             <button class="close-sign-in">Menyuni yopish</button>
         </li>
 
-        <li class="sign-up-modal display-none">
+        <li class="sign-up-modal">
             <h3 class="card-title">AVID.UZ</h3>
     
             <form class="form" action="index.php" autocomplete="off" method="POST">
@@ -74,26 +74,58 @@
         
             <a href="#courses"><img class="hero-down" src="./img/circle-chevron-down-solid.svg" alt="down"></a>
         </div>
+
+        <ol class="list">
+            <li class="list-item">
+                <img src="https://picsum.photos/300/400" alt="card img">
+                <div class="body">
+                    <h3 id="1" class="body-title">body title</h3>
+                    <p class="body-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolor nemo, ratione minima voluptatum exc!</p>
+                    <button>Kursga o'tish</button>
+                </div>
+            </li>
+
+            <li class="list-item">
+                <img src="https://picsum.photos/300/400" alt="card img">
+                <div class="body">
+                    <h3 id="1" class="body-title">body title</h3>
+                    <p class="body-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolor nemo, ratione minima voluptatum exc!</p>
+                    <button>Kursga o'tish</button>
+                </div>
+            </li>
+
+            <li class="list-item">
+                <img src="https://picsum.photos/300/400" alt="card img">
+                <div class="body">
+                    <h3 id="1" class="body-title">body title</h3>
+                    <p class="body-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolor nemo, ratione minima voluptatum exc!</p>
+                    <button>Kursga o'tish</button>
+                </div>
+            </li>
+
+            <li class="list-item">
+                <img src="https://picsum.photos/300/400" alt="card img">
+                <div class="body">
+                    <h3 id="1" class="body-title">body title</h3>
+                    <p class="body-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolor nemo, ratione minima voluptatum exc!</p>
+                    <button>Kursga o'tish</button>
+                </div>
+            </li>
+
+            <li class="list-item">
+                <img src="https://picsum.photos/300/400" alt="card img">
+                <div class="body">
+                    <h3 id="1" class="body-title">body title</h3>
+                    <p class="body-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolor nemo, ratione minima voluptatum exc!</p>
+                    <button>Kursga o'tish</button>
+                </div>
+            </li>
+        </ol>
     </main>
 
     
 <template class="sign-in-template">
-    <div class="sign-in-modal">
-        <h3 class="card-title">AVID.UZ</h3>
-
-        <form class="form-in" action="index.php" autocomplete="off" method="POST">
-            <input class="form-input-in" type="text" maxlength="20" name="userName" aria-label="userneym kiriting..." placeholder="Username" required>
-            <input class="form-pass-in" type="password" name="userPassword" aria-label="Maxfiy parol kiriting bu sizning profilingizga kirish uchun parol sifatida saqlanadi." placeholder="Password" minlength="7" maxlength="23" required>
-            <div id="mode">
-                <strong id="textIn" class="type-text-in"></strong>
-                <strong id="passwordIn"></strong>
-            </div>
-            <button class="form-button" type="submit">Kirish</button>
-            <a class="forgot" href="#">Parolni unutdingizmi?</a>
-        </form>
-
-        <button class="close-sign-in">Menyuni yopish</button>
-    </div>
+    
 </template>
 <script src="./js/arr.js"></script>
 <script src="./js/utils.js"></script>

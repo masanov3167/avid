@@ -15,8 +15,8 @@ const signList = document.querySelector(".sign-list");
 header.addEventListener("click", evt =>{
     if(evt.target.matches(".toggle")){
         navbar.classList.add('show');
-        signIn.classList.add("display-none");
-        signUp.classList.add("display-none");
+        signIn.classList.remove("sign-show");
+        signUp.classList.remove("sign-show");
         document.querySelector(".hero-down").style.opacity = "0"
     }
     if(evt.target.matches(".header-nav-item")){
@@ -25,17 +25,20 @@ header.addEventListener("click", evt =>{
     }
     if(evt.target.matches(".close")){
         navbar.classList.remove("show");
-        document.querySelector(".hero-down").style.opacity = "1"
+        document.querySelector(".hero-down").style.opacity = "1";
+        signList.classList.add("display-none");
     }
     if(evt.target.matches(".header-login-sign-up") || evt.target.matches(".sign")){
-        signIn.classList.add("display-none");
-        signUp.classList.remove("display-none");
+        signIn.classList.remove("sign-show");
+        signUp.classList.add("sign-show");
+        signList.classList.remove("display-none");
         formInputPass.value = null;
         formInputEmail.value = null;
     }
     if(evt.target.matches(".header-login-sign-in") || evt.target.matches(".enter")){
-        signUp.classList.add("display-none");
-        signIn.classList.remove("display-none");
+        signUp.classList.remove("sign-show");
+        signIn.classList.add("sign-show");
+        signList.classList.remove("display-none");
         formInputPassIn.value = null;
         formInputEmailIn.value = null;
     }
@@ -43,10 +46,12 @@ header.addEventListener("click", evt =>{
 
 signList.addEventListener("click", evt =>{
     if(evt.target.matches(".close-sign-up")){
-        signUp.classList.add("display-none");
+        signUp.classList.remove("sign-show");
+        signList.classList.add("display-none");
     }
     if(evt.target.matches(".close-sign-in")){
-        signIn.classList.add("display-none");
+        signIn.classList.remove("sign-show");
+        signList.classList.add("display-none");
     }
     if(evt.target.matches(".type-text")){
         eye.classList.remove("type-text");
@@ -79,6 +84,8 @@ form.addEventListener("submit", e =>{
 Password: ${userPass}`);
     formInputEmail.value = null;
     formInputPass.value = null;
+    signList.classList.add("display-none");
+    signUp.classList.remove("sign-show");
 })
 
 formIn.addEventListener("submit", e =>{
@@ -90,4 +97,6 @@ formIn.addEventListener("submit", e =>{
 Password: ${userPass}`);
     formInputEmailIn.value = null;
     formInputPassIn.value = null;
+    signList.classList.add("display-none");
+    signIn.classList.remove("sign-show");
 })
