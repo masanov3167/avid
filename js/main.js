@@ -115,7 +115,7 @@ async function getCourses(){
     console.log(h);
     renderCourses(h, list)
 }
-// getCourses();
+getCourses();
 
 function renderCourses(arr, node){
     node.innerHTML = null;
