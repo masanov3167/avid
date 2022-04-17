@@ -1,3 +1,5 @@
+@import "./lessons";
+
 @font-face{
     font-family: 'masanov';
     src: url(../fonts/rubik.ttf);
@@ -352,7 +354,7 @@ $header-font-size: 15px;
     position: fixed;
     top: 85px;
     width: 100%;
-    height: 87vh;
+    height: 100vh;
     background: whitesmoke;
     z-index: 4;
 }
@@ -491,30 +493,14 @@ $header-font-size: 15px;
            animation: linear downAnim 1.4s infinite;
         }
     }
+    .main{
+        width: 100% !important;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .display-none{
     display: none;
-}
-.display-block{
-    display: block;
 }
 .show{
     transform: scale(1);
