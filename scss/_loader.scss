@@ -17,7 +17,7 @@ $loader-size: 25vh;
   font-weight: bold;
   font-size: $loader-size;
   position: fixed;
-  top: 18 0px;
+  top: 200px;
  
   opacity: 0.8;
   span {
@@ -37,29 +37,3 @@ $loader-size: 25vh;
     opacity: 0.5;
   }
 }
-
-// @media only screen and (min-width: 700px) and (max-width: 799px){
-//     .loader{
-//         left: 43.4%;
-//     }
-// }
-// @media only screen and (min-width: 600px) and (max-width: 699px){
-//     .loader{
-//         left: 41.5%;
-//     }
-// }
-// @media only screen and (min-width: 500px) and (max-width: 599px){
-//     .loader{
-//         left: 40%;
-//     }
-// }
-// @media only screen and (min-width: 400px) and (max-width: 499px){
-//     .loader{
-//         left: 38.3%;
-//     }
-// }
-// @media only screen and (min-width: 300px) and (max-width: 399px){
-//     .loader{
-//         left: 36.7%;
-//     }
-// }
