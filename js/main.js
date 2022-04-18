@@ -4,6 +4,10 @@ const main = document.querySelector(".main");
 const signUp = document.querySelector(".sign-up-modal");
 const signIn = document.querySelector(".sign-in-modal");
 const form = document.querySelector(".form");
+const supportForm = document.querySelector(".support-form");
+const supportName = document.querySelector(".name-input");
+const supportEmail = document.querySelector(".email-input");
+const supportTextarea = document.querySelector(".problem-textarea");
 const formIn = document.querySelector(".form-in");
 const formInputPass = document.querySelector(".form-pass");
 const formInputPassIn = document.querySelector(".form-pass-in");
@@ -36,6 +40,7 @@ header.addEventListener("click", evt =>{
     if(evt.target.matches(".header-login-sign-up") || evt.target.matches(".sign")){
         signIn.classList.remove("sign-show");
         signUp.classList.add("sign-show");
+        supportForm.classList.remove("sign-show");
         signList.classList.remove("display-none");
         formInputPass.value = null;
         formInputEmail.value = null;
@@ -43,9 +48,17 @@ header.addEventListener("click", evt =>{
     if(evt.target.matches(".header-login-sign-in") || evt.target.matches(".enter")){
         signUp.classList.remove("sign-show");
         signIn.classList.add("sign-show");
+        supportForm.classList.remove("sign-show");
         signList.classList.remove("display-none");
         formInputPassIn.value = null;
         formInputEmailIn.value = null;
+    }
+
+    if(evt.target.matches(".support-form") || evt.target.matches(".nav-support")){
+        signUp.classList.remove("sign-show");
+        signIn.classList.remove("sign-show");
+        supportForm.classList.add("sign-show");
+        signList.classList.remove("display-none");
     }
     if(evt.target.matches(".main-menu")){
         getCourses();
@@ -89,6 +102,7 @@ signList.addEventListener("click", evt =>{
     }
 });
 
+
 form.addEventListener("submit", e =>{
     e.preventDefault();
     const userEmail = formInputEmail.value.trim();
@@ -115,6 +129,36 @@ Password: ${userPass}`);
     signIn.classList.remove("sign-show");
 });
 
+supportForm.addEventListener("submit", evt =>{
+    evt.preventDefault();
+
+    const userName =  supportName.value.trim();
+    const userEmail = supportEmail.value.trim();
+    const userSms =   supportTextarea.value.trim();
+
+    alert(`Ism: ${userName}, email:${userEmail}, habar:${userSms}`);
+
+    setTimeout(() =>{
+        supportName.value = null;
+        supportEmail.value = null;
+        supportTextarea.value = null;
+
+        signList.classList.add("display-none");
+        supportForm.classList.remove("sign-show");
+    }, 2300);
+})
+
+list.addEventListener("click", evt =>{
+   if(evt.target.matches(".body-btn")){
+    document.querySelector(".alert-wrapper").classList.remove("display-none");
+    document.querySelector(".alert").innerHTML = `Tez kunlarda darslarni joylaymiz <span class="ios">🌚🔥</span>`;
+    list.style.opacity = "0.2";
+       setTimeout(() =>{
+           document.querySelector(".alert-wrapper").classList.add("display-none");
+           list.style.opacity = "1";
+       }, 1300)
+   }
+})
 async function getCourses(){
 
     const res = await fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=16bebfc50341cc543211465e5af7fc48");
@@ -220,3 +264,12 @@ function renderAbout(node){
         document.querySelector("footer").style.opacity = "1";
     }, 1500);
 }
+
+
+// document.querySelector(".body-btn").addEventListener("click", () => {
+//     document.body.style.backgroundColor = "red";
+//     document.querySelector(".alert-wrapper").classList.remove("display-none");
+//     setTimeout(() =>{
+//         document.querySelector(".alert-wrapper").classList.add("display-none");
+//     }, 1000)
+// });

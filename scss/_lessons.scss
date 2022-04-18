@@ -252,6 +252,54 @@
     }
 }
 
+// support section style 
+.support-form{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: auto;
+    background: url(https://directlinedev.com/media/services/service/background/background_11.wide.jpeg) no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    margin: 10px auto;
+    padding: 20px 30px;
+
+    position: fixed;
+    top: 170px;
+    left: calc(36%);
+    transition-duration: 1s;
+    transform: translate(270%);
+
+    input, .support-btn{
+        width: 90%;
+        margin: 10px auto;
+        height: 35px;
+        border: 1px solid #FFFFFF;
+        border-radius: 5px;
+        background: none;
+        outline: none;
+        padding: 0 2%;
+        color: #ffffff;
+
+        &::placeholder{
+            color: white;
+            opacity: 0.8;
+        }
+    }
+    .support-btn{
+        background: #FFFFFF;
+        color: black;
+    }
+    .problem-textarea{
+        width: 90%;
+        resize: none;
+        margin: 0 auto;
+        padding: 1% 2%;
+        border-radius: 5px;
+        outline: none;
+    }
+}
+
 // footer style here 
 footer{
     width: 100%;
@@ -297,4 +345,22 @@ footer{
             transition: all .2s;
         }
     }
+}
+
+// alert style here 
+.alert-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.alert{
+    position: fixed;
+    top: 300px;
+    padding: 15px 10px;
+    background: red;
+    border-radius: 10px;
+    transform: scale(1.1);
 }
