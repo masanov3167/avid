@@ -396,7 +396,6 @@ $header-font-size: 15px;
     z-index: 6;
     position: fixed;
     top: 100px;
-    left: calc(36%);
     transition-duration: 1s;
     transform: translate(270%);
     display: flex;
@@ -451,14 +450,7 @@ $header-font-size: 15px;
         margin-left: 65% !important;
     }
 }
-// @media only screen and (min-width: 300px) and (max-width: 650px){
-//     .sign-in-modal, .sign-up-modal{
-//         top: 60px;
-//         left: 10%;
-//         width: 80%;
-//     }
-// }
-    
+
 // main style here 
 @keyframes downAnim {
     0%{
