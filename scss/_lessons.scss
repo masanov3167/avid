@@ -1,3 +1,8 @@
+@font-face{
+    font-family: 'iphone';
+    src: url(../fonts/ios.ttf);
+}
+
 .list{
     width: 100%;
     height: auto;
@@ -162,6 +167,90 @@
     }
 }
 
+// about section style here 
+.ios{
+    font-family: 'iphone' !important;
+}
+.about{
+    margin: 0 auto;
+    height: auto;
+    width: 70%;
+    padding: 2% 0;
+    margin-top: 5px;
+    &-title{
+        font-size: 24px;
+        text-align: center;
+        border-bottom: 3px solid #192774;
+        margin: 20px auto 25px;
+        width: inherit;
+        height: 35px;
+    }
+    &-caption{
+
+        p{
+            margin: 10px auto;
+            letter-spacing: 1px;
+            line-height: 20px;
+            font-size: 18px;
+        }
+    }
+    &-ceo{
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+
+.ceo-container{
+    list-style: none;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    padding: 4% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    background: white;
+    .ceo-item{
+        width: 200px;
+        height: 180px;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(45, 45, 45, 0.3);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+
+        transition-duration: .3s;
+        transition-property: transform;
+        transform: translateZ(0);
+        margin-bottom: 15px;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &-img{
+            width: 70px;
+            height: 70px;
+            display: block;
+        }
+        &-title{
+            font-size: 15px;
+        }
+    }
+    .url-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .url-img{
+            width: 25px;
+            height: 25px;
+            margin: 0 3px;
+        }
+    }
+}
 
 // footer style here 
 footer{

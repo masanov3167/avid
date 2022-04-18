@@ -13,6 +13,7 @@ const signList = document.querySelector(".sign-list");
 const fragment = document.createDocumentFragment();
 const coursesTemplate = document.querySelector(".courses-template").content;
 const blogTemplate = document.querySelector(".blog-template").content;
+const aboutTemplate = document.querySelector(".about-template").content;
 const list = document.querySelector(".list");
 
 
@@ -51,6 +52,9 @@ header.addEventListener("click", evt =>{
     }
     if(evt.target.matches(".nav-blog")){
         renderBlog(list);
+    }
+    if(evt.target.matches(".nav-about")){
+        renderAbout(list);
     }
 });
 
@@ -119,7 +123,7 @@ async function getCourses(){
     console.log(h);
     renderCourses(h, list)
 }
-// getCourses();
+getCourses();
 
 function renderCourses(arr, node){
     document.querySelector(".hero-title").textContent = "Dasturlashga oid onlayn darslar platformasi";
@@ -178,10 +182,35 @@ function renderBlog(node){
      
             const cloned = blogTemplate.cloneNode(true);
     
-            // cloned.querySelector(".list-item-img").src = `https://image.tmdb.org/t/p/w500${a?.poster_path}`;
-            // cloned.querySelector(".body-title").textContent = a?.title;
-            // cloned.querySelector(".body-title").id = a?.id;
-            // cloned.querySelector(".body-info").textContent = a?.overview.substr(0,80);
+            fragment.appendChild(cloned);
+    
+        node.appendChild(fragment);
+        document.querySelector(".hero").style.opacity = "1";
+        document.querySelector(".static").style.opacity = "1";
+        document.querySelector("footer").style.opacity = "1";
+    }, 1500);
+}
+
+function renderAbout(node){
+    document.querySelector(".hero-title").innerHTML = `Bu yerda biz haqimizda batafsil ma'lumot olishingiz mumkin<span class="ios">☺️</span> `;
+    document.title = "Avid.uz - biz haqimizda";
+    node.innerHTML = null;
+    document.querySelector(".hero").style.opacity = "0";
+    document.querySelector(".static").style.opacity = "0";
+    document.querySelector("footer").style.opacity = "0";
+
+    const loader = document.createElement("div");
+    loader.classList.add("loader-wrapper");
+    loader.innerHTML = `<div class="loader">
+    <span>{</span><span>}</span>
+</div>`;
+    list.appendChild(loader);
+   
+    setTimeout(() =>{
+        node.innerHTML = "";
+
+     
+            const cloned = aboutTemplate.cloneNode(true);
     
             fragment.appendChild(cloned);
     
