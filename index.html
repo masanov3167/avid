@@ -34,9 +34,8 @@
 
     <ol class="sign-list display-none">
         <li class="sign-in-modal">
-            <h3 class="card-title">AVID.UZ</h3>
-    
             <form class="form-in" action="index.php" autocomplete="off" method="POST">
+                <h3 class="card-title">AVID.UZ</h3>
                 <input class="form-input-in" type="text" maxlength="20" name="userName" aria-label="userneym kiriting..." placeholder="Username" required>
                 <input class="form-pass-in" type="password" name="userPassword" aria-label="Maxfiy parol kiriting bu sizning profilingizga kirish uchun parol sifatida saqlanadi." placeholder="Password" minlength="7" maxlength="23" required>
                 <div id="mode">
@@ -45,15 +44,14 @@
                 </div>
                 <button class="form-button" type="submit">Kirish</button>
                 <a class="forgot" href="#">Parolni unutdingizmi?</a>
+
+                <button class="close-sign-in">Menyuni yopish</button>
             </form>
-    
-            <button class="close-sign-in">Menyuni yopish</button>
         </li>
 
         <li class="sign-up-modal">
-            <h3 class="card-title">AVID.UZ</h3>
-    
             <form class="form" action="index.php" autocomplete="off" method="POST">
+                <h3 class="card-title">AVID.UZ</h3>
                 <input class="form-input" type="email" maxlength="20" name="userName" aria-label="userneym kiriting..." placeholder="Username" required>
                 <input class="form-pass" type="password" name="userPassword" aria-label="Maxfiy parol kiriting bu sizning profilingizga kirish uchun parol sifatida saqlanadi." placeholder="Password" minlength="7" maxlength="23" required>
                 <div id="mode">
@@ -61,17 +59,19 @@
                     <strong id="eyeSlash"></strong>
                 </div>
                 <button class="form-btn" type="submit">Ro'yhatdan o'tish</button>
-            </form>
 
-            <button class="close-sign-up">Menyuni yopish</button>
+                <button class="close-sign-up">Menyuni yopish</button>
+            </form>
         </li>
 
-        <form class="support-form" autocomplete="off" method="post">
-            <input class="name-input" type="text" aria-label="ismingizni kiriting" placeholder="ismingizni kiriting" minlength="4" required>
-            <input class="email-input" type="email" aria-label="email pochtangizni kiriting" placeholder="emailingizni kiriting" required>
-            <textarea name="user-problem" class="problem-textarea" cols="30" rows="10" placeholder="Habaringizni batafsil yozib qoldiring..."></textarea>
-            <button class="support-btn" type="submit">Jo'natish</button>
-        </form>
+        <li class="support-card">
+            <form class="support-form" autocomplete="off" method="post">
+                <input class="name-input" type="text" aria-label="ismingizni kiriting" placeholder="ismingizni kiriting" minlength="4" required>
+                <input class="email-input" type="email" aria-label="email pochtangizni kiriting" placeholder="emailingizni kiriting" required>
+                <textarea name="user-problem" class="problem-textarea" cols="30" rows="10" placeholder="Habaringizni batafsil yozib qoldiring..."></textarea>
+                <button class="support-btn" type="submit">Jo'natish</button>
+            </form>
+        </li>
     </ol>
 
     <main class="main">
@@ -82,7 +82,7 @@
             <a href="#courses"><img class="hero-down" src="./img/circle-chevron-down-solid.svg" alt="down"></a>
         </div>
 
-        <ol id="courses" class="list">
+        <ol id="courses" class="list shadow">
         </ol>
 
      
@@ -116,18 +116,10 @@
 
     <footer>
         <div class="footer">
-           <a href="https://instagram.com" target="__blank">
-                <img class="footer-img" src="https://onlayn-darslar.netlify.app/img/instagram.png" alt="card img">
-           </a>
-            <a href="https://youtube.com" target="__blank">
-                <img class="footer-img" src="https://onlayn-darslar.netlify.app/img/youtube.png" alt="card img">
-            </a>
-            <a href="https://github.com" target="__blank">
-                <img class="footer-img" src="https://onlayn-darslar.netlify.app/img/github.png" alt="card img">
-            </a>
-            <a href="https://telegram.org" target="__blank">
-                <img class="footer-img" src="https://onlayn-darslar.netlify.app/img/telegram.png" alt="card img">
-            </a>
+           <a href="https://instagram.com" target="__blank"><img class="footer-img" src="https://onlayn-darslar.netlify.app/img/instagram.png" alt="card img"></a>
+            <a href="https://youtube.com" target="__blank"><img class="footer-img" src="https://onlayn-darslar.netlify.app/img/youtube.png" alt="card img"></a>
+            <a href="https://github.com" target="__blank"><img class="footer-img" src="https://onlayn-darslar.netlify.app/img/github.png" alt="card img"></a>
+            <a href="https://telegram.org" target="__blank"><img class="footer-img" src="https://onlayn-darslar.netlify.app/img/telegram.png" alt="card img"></a>
         </div>
 
         <div class="footer-info">&copy; 2022 | By <a href="#">Avid.uz</a></div> 

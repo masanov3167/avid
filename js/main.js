@@ -1,8 +1,8 @@
 const header = document.querySelector(".header");
 const navbar = document.querySelector(".header-nav");
 const main = document.querySelector(".main");
-const signUp = document.querySelector(".sign-up-modal");
-const signIn = document.querySelector(".sign-in-modal");
+const signUp = document.querySelector(".form");
+const signIn = document.querySelector(".form-in");
 const form = document.querySelector(".form");
 const supportForm = document.querySelector(".support-form");
 const supportName = document.querySelector(".name-input");
@@ -26,15 +26,19 @@ header.addEventListener("click", evt =>{
         navbar.classList.add('show');
         signIn.classList.remove("sign-show");
         signUp.classList.remove("sign-show");
-        document.querySelector(".hero-down").style.opacity = "0"
+        supportForm.classList.remove("sign-show");
+        main.style.opacity = "0.3";
+        document.querySelector("footer").style.opacity = "0.3";
     }
     if(evt.target.matches(".header-nav-item")){
         navbar.classList.remove("show");
-        document.querySelector(".hero-down").style.opacity = "1";
+        main.style.opacity = "1";
+        document.querySelector("footer").style.opacity = "1";
     }
     if(evt.target.matches(".close")){
         navbar.classList.remove("show");
-        document.querySelector(".hero-down").style.opacity = "1";
+        main.style.opacity = "1";
+        document.querySelector("footer").style.opacity = "1";
         signList.classList.add("display-none");
     }
     if(evt.target.matches(".header-login-sign-up") || evt.target.matches(".sign")){
@@ -176,6 +180,11 @@ function renderCourses(arr, node){
     document.querySelector(".hero").style.opacity = "0";
     document.querySelector(".static").style.opacity = "0";
     document.querySelector("footer").style.opacity = "0";
+    signList.classList.add("display-none");
+    signIn.classList.remove("sign-show");
+    signUp.classList.remove("sign-show");
+    supportForm.classList.remove("sign-show");
+    list.classList.remove("shadow");
 
     const loader = document.createElement("div");
     loader.classList.add("loader-wrapper");
@@ -201,6 +210,7 @@ function renderCourses(arr, node){
         document.querySelector(".hero").style.opacity = "1";
         document.querySelector(".static").style.opacity = "1";
         document.querySelector("footer").style.opacity = "1";
+        list.classList.add("shadow");
     }, 1500);
 }
 
@@ -212,6 +222,11 @@ function renderBlog(node){
     document.querySelector(".hero").style.opacity = "0";
     document.querySelector(".static").style.opacity = "0";
     document.querySelector("footer").style.opacity = "0";
+    signList.classList.add("display-none");
+    signIn.classList.remove("sign-show");
+    signUp.classList.remove("sign-show");
+    supportForm.classList.remove("sign-show");
+    list.classList.remove("shadow");
 
     const loader = document.createElement("div");
     loader.classList.add("loader-wrapper");
@@ -232,6 +247,7 @@ function renderBlog(node){
         document.querySelector(".hero").style.opacity = "1";
         document.querySelector(".static").style.opacity = "1";
         document.querySelector("footer").style.opacity = "1";
+        list.classList.add("shadow");
     }, 1500);
 }
 
@@ -242,6 +258,11 @@ function renderAbout(node){
     document.querySelector(".hero").style.opacity = "0";
     document.querySelector(".static").style.opacity = "0";
     document.querySelector("footer").style.opacity = "0";
+    signList.classList.add("display-none");
+    signIn.classList.remove("sign-show");
+    signUp.classList.remove("sign-show");
+    supportForm.classList.remove("sign-show");
+    list.classList.remove("shadow");
 
     const loader = document.createElement("div");
     loader.classList.add("loader-wrapper");
@@ -262,14 +283,6 @@ function renderAbout(node){
         document.querySelector(".hero").style.opacity = "1";
         document.querySelector(".static").style.opacity = "1";
         document.querySelector("footer").style.opacity = "1";
+        list.classList.add("shadow");
     }, 1500);
 }
-
-
-// document.querySelector(".body-btn").addEventListener("click", () => {
-//     document.body.style.backgroundColor = "red";
-//     document.querySelector(".alert-wrapper").classList.remove("display-none");
-//     setTimeout(() =>{
-//         document.querySelector(".alert-wrapper").classList.add("display-none");
-//     }, 1000)
-// });
