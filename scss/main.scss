@@ -1,5 +1,6 @@
 @import "./lessons";
 @import "./loader";
+@import "./videos";
 
 @font-face{
     font-family: 'masanov';
@@ -467,7 +468,7 @@ $header-font-size: 15px;
 .hero{
     width: 500px;
     margin: 150px auto;
-    height: 35vh;
+    height: 38vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

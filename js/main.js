@@ -171,7 +171,7 @@ async function getCourses(){
     console.log(h);
     renderCourses(h, list)
 }
-getCourses();
+// getCourses();
 
 function renderCourses(arr, node){
     document.querySelector(".hero-title").textContent = "Dasturlashga oid onlayn darslar platformasi";
