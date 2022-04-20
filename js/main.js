@@ -18,6 +18,7 @@ const fragment = document.createDocumentFragment();
 const coursesTemplate = document.querySelector(".courses-template").content;
 const blogTemplate = document.querySelector(".blog-template").content;
 const aboutTemplate = document.querySelector(".about-template").content;
+const videoTemplate = document.querySelector(".video-template").content;
 const list = document.querySelector(".list");
 
 
@@ -151,17 +152,26 @@ supportForm.addEventListener("submit", evt =>{
         supportForm.classList.remove("sign-show");
     }, 2300);
 })
-
+let videosArr = [];
 list.addEventListener("click", evt =>{
    if(evt.target.matches(".body-btn")){
-    document.querySelector(".alert-wrapper").classList.remove("display-none");
-    document.querySelector(".alert").innerHTML = `Tez kunlarda darslarni joylaymiz <span class="ios">🌚🔥</span>`;
-    list.style.opacity = "0.2";
-       setTimeout(() =>{
-           document.querySelector(".alert-wrapper").classList.add("display-none");
-           list.style.opacity = "1";
-       }, 1300)
+      renderVideos(videos, list);
    }
+
+   if(evt.target.matches(".video-title")){
+    const video = evt.target.dataset.videoId;
+    console.log(video);
+
+    const find = videos.find(a => a.id == video);
+
+    videosArr.push(find)
+    videosArr.forEach(a =>{
+       const {url, title} = a;
+        document.querySelector(".run-video").src = url;
+        document.querySelector(".video-title").textContent = title;
+        console.log(a.url);
+    })
+}
 })
 async function getCourses(){
 
@@ -171,7 +181,7 @@ async function getCourses(){
     console.log(h);
     renderCourses(h, list)
 }
-// getCourses();
+getCourses();
 
 function renderCourses(arr, node){
     document.querySelector(".hero-title").textContent = "Dasturlashga oid onlayn darslar platformasi";
@@ -251,6 +261,74 @@ function renderBlog(node){
     }, 1500);
 }
 
+function renderVideos(arr, node){
+    document.querySelector(".hero-title").textContent = "Video kurslar bo'limiga hush kelibsiz!";
+    document.title = "Avid.uz - videokurslar";
+    node.innerHTML = null;
+    document.querySelector(".hero").style.opacity = "0";
+    document.querySelector(".static").style.opacity = "0";
+    document.querySelector("footer").style.opacity = "0";
+    signList.classList.add("display-none");
+    signIn.classList.remove("sign-show");
+    signUp.classList.remove("sign-show");
+    supportForm.classList.remove("sign-show");
+    list.classList.remove("shadow");
+
+    const loader = document.createElement("div");
+    loader.classList.add("loader-wrapper");
+    loader.innerHTML = `<div class="loader">
+    <span>{</span><span>}</span>
+</div>`;
+    list.appendChild(loader);
+   
+    setTimeout(() =>{
+        node.innerHTML = "";
+        const videoContainer = document.createElement("div");
+        videoContainer.classList.add("video-container");
+
+        const mainVideo = document.createElement("div");
+        mainVideo.classList.add("main-video");
+        mainVideo.setAttribute("src", arr.url);
+        videoContainer.appendChild(mainVideo);
+
+        const runVideoWrapper = document.createElement("div");
+        runVideoWrapper.classList.add("video");
+        mainVideo.appendChild(runVideoWrapper);
+
+        const runVideo = document.createElement("video");
+        runVideo.classList.add("run-video");
+        runVideo.setAttribute("src", arr[0].url);
+        runVideo.setAttribute("controls", "true")
+        runVideoWrapper.appendChild(runVideo);
+
+        const videoTitle = document.createElement("h3");
+        videoTitle.classList.add("video-title");
+        videoTitle.textContent = arr[0].title;
+        runVideoWrapper.appendChild(videoTitle);
+
+        const listVideo = document.createElement("div");
+        listVideo.classList.add("video-list");
+        videoContainer.appendChild(listVideo);
+
+        arr.forEach(a =>{
+            const cloned = videoTemplate.cloneNode(true);
+            const {id,url,  title} = a;
+            cloned.querySelector(".vid-url").src = url;
+            cloned.querySelector(".video-title").dataset.videoId = id;
+            cloned.querySelector(".video-title").textContent = title;
+    
+            fragment.appendChild(cloned);
+        });
+        listVideo.appendChild(fragment);
+
+        node.appendChild(videoContainer);
+        document.querySelector(".hero").style.opacity = "1";
+        document.querySelector(".static").style.opacity = "1";
+        document.querySelector("footer").style.opacity = "1";
+        list.classList.add("shadow");
+    }, 1500);
+}
+
 function renderAbout(node){
     document.querySelector(".hero-title").innerHTML = `Bu yerda biz haqimizda batafsil ma'lumot olishingiz mumkin<span class="ios">☺️</span> `;
     document.title = "Avid.uz - biz haqimizda";
@@ -286,24 +364,3 @@ function renderAbout(node){
         list.classList.add("shadow");
     }, 1500);
 }
-
-
-
-// video pleyer 
-let listVideo = document.querySelectorAll(".video-list .vid");
-let mainVideo = document.querySelector(".main-video video");
-let videoTitle = document.querySelector(".main-video .video-title");
-
-listVideo.forEach(video =>{
-    video.onclick = () =>{
-        listVideo.forEach(vid => vid.classList.remove("active"));
-        video.classList.add("active");
-
-        if(video.classList.contains("active")){
-            let src = video.children[0].getAttribute("src");
-            mainVideo.src = src;
-            let text = video.children[1].innerHTML;
-            videoTitle.innerHTML = text;
-        }
-    }
-})

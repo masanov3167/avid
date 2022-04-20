@@ -82,38 +82,7 @@
             <a href="#courses"><img class="hero-down" src="./img/circle-chevron-down-solid.svg" alt="down"></a>
         </div>
 
-        <ol id="courses" class="list shadow">
-            <div class="video-container">
-                <div class="main-video">
-                    <div class="video">
-                        <video src="https://masanov.deect.site/Apilar/github.m4v" controls></video>
-                        <h3 class="video-title">1) Githubda jamoaviy ishlash</h3>
-                    </div>
-                </div>
-
-                <div class="video-list">
-                    <div class="vid active">
-                        <video src="https://masanov.deect.site/Apilar/github.m4v" controls></video>
-                        <h3 class="video-title">1) Githubda jamoaviy ishlash</h3>
-                    </div>
-
-                    <div class="vid">
-                        <video src="https://masanov.deect.site/Apilar/lagan.mp4" controls></video>
-                        <h3 class="video-title">2) php kirish darsi</h3>
-                    </div>
-
-                    <div class="vid">
-                        <video src="https://masanov.deect.site/Apilar/bolalik.mp4" controls></video>
-                        <h3 class="video-title">3) Javascriptda backenddan ma'lumot olish</h3>
-                    </div>
-
-                    <div class="vid">
-                        <video src="https://masanov.deect.site/Apilar/toshkent.mp4" controls></video>
-                        <h3 class="video-title">4) react componentlar haqida</h3>
-                    </div>
-                </div>
-            </div>
-        </ol>
+        <ol id="courses" class="list shadow"></ol>
 
      
             <ol class="static">
@@ -232,7 +201,14 @@
 
     </li>
 </template>
-<!-- <script src="./js/arr.js"></script> -->
+
+<template class="video-template">
+            <div class="vid">
+                <video class="vid-url" src="https://masanov.deect.site/Apilar/github.m4v" controls></video>
+                <h3 class="video-title">1) Githubda jamoaviy ishlash</h3>
+            </div>
+</template>
+<script src="./js/arr.js"></script>
 <script src="./js/utils.js"></script>
 <script src="./js/main.js"></script>
 </body>
