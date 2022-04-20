@@ -17,6 +17,7 @@
                 width: 100%;
                 height: auto;
                 cursor: pointer;
+                border-radius: 5px;
             }
             &-title{
                 font-size: 23px;
@@ -64,6 +65,10 @@
 
         .main-video{
             width: 100%;
+
+            .video-title{
+                font-size: 18px;
+            }
         }
         .video-list{
             width: 100%;
